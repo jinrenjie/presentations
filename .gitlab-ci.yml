@@ -1,4 +1,6 @@
 pages:
+  tags:
+    - pages
   stage: deploy
   environment: production
   script:
