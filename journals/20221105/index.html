@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>UDFS</title>
+
+		<link rel="stylesheet" href="/dist/reset.css">
+		<link rel="stylesheet" href="/dist/reveal.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="/plugin/highlight/monokai.css">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+			  theme: {
+				extend: {
+				  colors: {
+					clifford: '#da373d',
+				  }
+				}
+			  }
+			}
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="assets/cover-background.jpg">
+					<div class="text-left">
+						<h1 class="text-8xl text-indigo-500">UDFS</h1>
+						<h4 class="mt-8 text-4xl text-slate-400">通用动态表单管理系统</h3>
+					</div>
+                </section>
+				<section data-auto-animate>
+					<div class="bg-white py-12">
+						<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+						  <div class="lg:text-center">
+							<h2 class="text-6xl font-semibold text-indigo-500">Problems</h2>
+							<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">目前在 C 端业务以及内部 CRM 系统中遇到的问题</p>
+						  </div>
+					  
+						  <div class="mt-24">
+							<dl class="text-left space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+									<!-- Heroicon name: outline/globe-alt -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">表单需求多样性</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">随着业务的扩展，对于不同区域的业务需要不同的垂询表单。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+									<!-- Heroicon name: outline/scale -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">业务逻辑强耦合</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">现有的垂询业务逻辑系统中，每次需求的变更基本上都需要多端共同升级发版。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+									<!-- Heroicon name: outline/bolt -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">数据字段维护难</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">因为字段的定义和枚举值都维护在代码从，虽则业务的迭代，这些字段对应的意图可能会被覆盖。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+									<!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">业务流程观测性</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">对于表单业务的执行经过和逻辑无法进行有效观测，只能由开发人员进行人工追踪。</dd>
+							  </div>
+							</dl>
+						  </div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<section class="h-full">
+						<div class="grid mt-40 self-center grid-flow-col grid-rows-2 grid-cols-3 gap-8 bg-no-repeat bg-center h-3/5 bg-[url('https://pic3.zhimg.com/v2-ea227b4a7ccb8469f8accda42a5ec87a_b.jpg')]">
+							<div class="transform text-2xl scale-110 text-red-500 -rotate-6">
+							  <h1>增加抢单逻辑</h1>
+							</div>
+							<div class="text-2xl col-start-3 transform scale-75 text-red-300 rotate-6 translate-x-2 translate-y-15">
+							  <h1>黑名单功能</h1>
+							</div>
+							<div class="text-2xl transform scale-125 -rotate-45 text-red-300 translate-y-11">
+							  <h1>租赁不可抢</h1>
+							</div>
+							<div class="text-2xl transform -translate-y-64 text-red-500 scale-150">
+							  <h1>渐进式表单</h1>
+							</div>
+							<div class="row-start-1 rotate-45 text-red-600 col-start-2 text-4xl col-span-2 transform translate-x-20 translate-y-4">
+							  <h1>XXX 问卷</h1>
+							</div>
+						  </div>
+					</section>
+				</section>
+				<section data-auto-animate>
+					<div class="bg-white py-12">
+						<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+						  <div class="lg:text-center">
+							<h2 class="text-6xl font-semibold text-indigo-500">Features</h2>
+							<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">根据目前所遇到的问题，UDFS 提供如下几种主要功能</p>
+						  </div>
+					  
+						  <div class="mt-24">
+							<dl class="text-left space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+									<!-- Heroicon name: outline/globe-alt -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">自定义表单</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">自定义表单字段和验证规则，支持选项枚举，甚至是 UI Schema 的定义！</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+									<!-- Heroicon name: outline/scale -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">自定义 Workflow</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">运营人员可以通过管理后台对垂询数据的 Workflow 进行编排，让数据按照所需的方式进行流转。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+									<!-- Heroicon name: outline/bolt -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">分布式且高可用</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">支持分布式部署，Workflow 的每一步都是一个可恢复的状态机，系统自带错误重试！</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+									<!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">渐进式扩展</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">Temproal Workflow 中的 Activity 是可扩展的，可以独立部署，最小化功能升级对整体业务的影响。</dd>
+							  </div>
+							</dl>
+						  </div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate data-background="http://i.giphy.com/90F8aUepslB84.gif">
+
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Technologies</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">关键性技术</p>
+					</div>
+					<ol class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
+						<li class="flex">
+							<svg class="h-11 w-11 flex-none overflow-visible" fill="none"><defs><filter id="step-icon-0" x="-3" y="-1" width="50" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2.5"></feGaussianBlur><feComposite in2="hardAlpha" operator="out"></feComposite><feColorMatrix values="0 0 0 0 0.054902 0 0 0 0 0.647059 0 0 0 0 0.913725 0 0 0 0.12 0"></feColorMatrix><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_804_95228"></feBlend><feBlend in="SourceGraphic" in2="effect1_dropShadow_804_95228" result="shape"></feBlend></filter></defs><g filter="url(#step-icon-0)"><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" fill="#EEF2FF"></path><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><path d="M11.75 8.75h12.5a3 3 0 0 1 3 3v20.5a3 3 0 0 1-3 3h-12.5a3 3 0 0 1-3-3v-20.5a3 3 0 0 1 3-3Z" fill="#fff" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path opacity=".4" d="M29.75 35.25h2.5a3 3 0 0 0 3-3v-20.5a3 3 0 0 0-3-3h-20.5a3 3 0 0 0-3 3v7.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M30.25 19.75v4.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+							<div class="ml-6">
+								<h2 class="flex items-center text-sm font-semibold leading-6">
+									<span class="hidden xl:inline text-indigo-500">JSON Schema</span></span>
+								</h2>
+								<p class="mt-2 text-sm leading-7 text-slate-600">通过定义 Schema 可以实现强大验证功能，选择使用这项技术也是主要是受 JetBrains IED 中配置文件的自动补全和验证功能启发。</p>
+							</div>
+						</li>
+						<li class="flex">
+							<svg class="h-11 w-11 flex-none overflow-visible" fill="none"><defs><filter id="step-icon-1" x="-3" y="-1" width="50" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2.5"></feGaussianBlur><feComposite in2="hardAlpha" operator="out"></feComposite><feColorMatrix values="0 0 0 0 0.054902 0 0 0 0 0.647059 0 0 0 0 0.913725 0 0 0 0.12 0"></feColorMatrix><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_804_95228"></feBlend><feBlend in="SourceGraphic" in2="effect1_dropShadow_804_95228" result="shape"></feBlend></filter></defs><g filter="url(#step-icon-1)"><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" fill="#EEF2FF"></path><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><path opacity=".4" d="M28.75 35.25h3.5a3 3 0 0 0 3-3v-20.5a3 3 0 0 0-3-3h-20.5a3 3 0 0 0-3 3v7.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.75 24.75a2 2 0 0 1 2-2h12.5a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-11.5a3 3 0 0 1-3-3v-7.5Z" fill="#fff"></path><path d="M10.75 23.5h12.5V22h-12.5v1.5Zm13.75 1.25v8.5H26v-8.5h-1.5Zm-1.25 9.75h-11.5V36h11.5v-1.5ZM9.5 32.25v-7.5H8v7.5h1.5Zm2.25 2.25a2.25 2.25 0 0 1-2.25-2.25H8A3.75 3.75 0 0 0 11.75 36v-1.5Zm12.75-1.25c0 .69-.56 1.25-1.25 1.25V36A2.75 2.75 0 0 0 26 33.25h-1.5Zm-1.25-9.75c.69 0 1.25.56 1.25 1.25H26A2.75 2.75 0 0 0 23.25 22v1.5ZM10.75 22A2.75 2.75 0 0 0 8 24.75h1.5c0-.69.56-1.25 1.25-1.25V22Z" fill="#6366F1"></path><path d="M15.25 26.75 12.75 29l2.5 2.25M18.75 26.75l2.5 2.25-2.5 2.25" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path opacity=".4" d="M12.75 14.25h18.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+							<div class="ml-6">
+								<h2 class="flex items-center text-sm font-semibold leading-6">
+									<span class="ml-2 text-indigo-500">Workflow DSL</span>
+								</h2>
+								<p class="mt-2 text-sm leading-7 text-slate-600">通过 YAML 或 JSON 等数据可以实现 Workflow 的定义，并将定义的 Workflow 反序列化为其他变成语言能够执行的逻辑。</p>
+							</div>
+						</li>
+						<li class="flex">
+							<svg class="h-11 w-11 flex-none overflow-visible" fill="none"><defs><filter id="step-icon-2" x="-3" y="-1" width="50" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2.5"></feGaussianBlur><feComposite in2="hardAlpha" operator="out"></feComposite><feColorMatrix values="0 0 0 0 0.054902 0 0 0 0 0.647059 0 0 0 0 0.913725 0 0 0 0.12 0"></feColorMatrix><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_804_95228"></feBlend><feBlend in="SourceGraphic" in2="effect1_dropShadow_804_95228" result="shape"></feBlend></filter></defs><g filter="url(#step-icon-2)"><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" fill="#EEF2FF"></path><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><path fill-rule="evenodd" clip-rule="evenodd" d="M23 35.25c.69 0 1.25-.56 1.25-1.25A3.75 3.75 0 0 1 28 30.25a1.25 1.25 0 1 0 0-2.5A3.75 3.75 0 0 1 24.25 24a1.25 1.25 0 1 0-2.5 0A3.75 3.75 0 0 1 18 27.75a1.25 1.25 0 0 0 0 2.5A3.75 3.75 0 0 1 21.75 34c0 .69.56 1.25 1.25 1.25Z" fill="#fff"></path><path d="M28 27a.75.75 0 0 0 0 1.5V27Zm-4.5 7a.5.5 0 0 1-.5.5V36a2 2 0 0 0 2-2h-1.5Zm5-5a.5.5 0 0 1-.5.5V31a2 2 0 0 0 2-2h-1.5Zm-.5-.5a.5.5 0 0 1 .5.5H30a2 2 0 0 0-2-2v1.5Zm-5-5a.5.5 0 0 1 .5.5H25a2 2 0 0 0-2-2v1.5Zm-.5.5a.5.5 0 0 1 .5-.5V22a2 2 0 0 0-2 2h1.5Zm-5 5a.5.5 0 0 1 .5-.5V27a2 2 0 0 0-2 2h1.5Zm.5.5a.5.5 0 0 1-.5-.5H16a2 2 0 0 0 2 2v-1.5Zm5 5a.5.5 0 0 1-.5-.5H21a2 2 0 0 0 2 2v-1.5ZM18 31a3 3 0 0 1 3 3h1.5a4.5 4.5 0 0 0-4.5-4.5V31Zm3-7a3 3 0 0 1-3 3v1.5a4.5 4.5 0 0 0 4.5-4.5H21Zm7 3a3 3 0 0 1-3-3h-1.5a4.5 4.5 0 0 0 4.5 4.5V27Zm-3 7a3 3 0 0 1 3-3v-1.5a4.5 4.5 0 0 0-4.5 4.5H25Z" fill="#6366F1"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M13 27.25c.69 0 1.25-.56 1.25-1.25 0-.966.784-1.75 1.75-1.75a1.25 1.25 0 1 0 0-2.5A1.75 1.75 0 0 1 14.25 20a1.25 1.25 0 1 0-2.5 0A1.75 1.75 0 0 1 10 21.75a1.25 1.25 0 0 0 0 2.5c.966 0 1.75.784 1.75 1.75 0 .69.56 1.25 1.25 1.25Z" fill="#fff"></path><path d="M16 21a.75.75 0 0 0 0 1.5V21Zm-2.5 5a.5.5 0 0 1-.5.5V28a2 2 0 0 0 2-2h-1.5Zm3-3a.5.5 0 0 1-.5.5V25a2 2 0 0 0 2-2h-1.5Zm-.5-.5a.5.5 0 0 1 .5.5H18a2 2 0 0 0-2-2v1.5Zm-3-3a.5.5 0 0 1 .5.5H15a2 2 0 0 0-2-2v1.5Zm-.5.5a.5.5 0 0 1 .5-.5V18a2 2 0 0 0-2 2h1.5Zm-3 3a.5.5 0 0 1 .5-.5V21a2 2 0 0 0-2 2h1.5Zm.5.5a.5.5 0 0 1-.5-.5H8a2 2 0 0 0 2 2v-1.5Zm3 3a.5.5 0 0 1-.5-.5H11a2 2 0 0 0 2 2v-1.5ZM10 25a1 1 0 0 1 1 1h1.5a2.5 2.5 0 0 0-2.5-2.5V25Zm1-5a1 1 0 0 1-1 1v1.5a2.5 2.5 0 0 0 2.5-2.5H11Zm5 1a1 1 0 0 1-1-1h-1.5a2.5 2.5 0 0 0 2.5 2.5V21Zm-1 5a1 1 0 0 1 1-1v-1.5a2.5 2.5 0 0 0-2.5 2.5H15Z" fill="#6366F1"></path><path opacity=".4" d="M29.75 35.25h2.5a3 3 0 0 0 3-3v-20.5a3 3 0 0 0-3-3h-20.5a3 3 0 0 0-3 3v5.5M12.75 14.25h18.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+								<div class="ml-6">
+								<h2 class="flex items-center text-sm font-semibold leading-6">
+									<span class="ml-2 text-indigo-500">Activity</span>
+								</h2>
+								<p class="mt-2 text-sm leading-7 text-slate-600">是 Workflow 的重要组成部分，也可以看做是一个可恢复的状态机，通过将事务拆分到单个 Activity 中，就可以实现业务的强一致性。</p>
+							</div>
+						</li>
+					</ol>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Thank you!</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">I hope this is helpful, Happy hacking…</p>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="/dist/reveal.js"></script>
+		<script src="/plugin/notes/notes.js"></script>
+		<script src="/plugin/markdown/markdown.js"></script>
+		<script src="/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
