@@ -8,6 +8,7 @@
 
 		<link rel="stylesheet" href="../../dist/reset.css">
 		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/white.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="../../plugin/highlight/monokai.css">
@@ -108,13 +109,13 @@
 							<div class="text-2xl col-start-3 transform scale-75 text-red-300 rotate-6 translate-x-2 translate-y-15">
 							  <h1>黑名单功能</h1>
 							</div>
-							<div class="text-2xl transform scale-125 -rotate-45 text-red-300 translate-y-11">
+							<div class="text-2xl transform scale-75 -rotate-45 text-red-300 translate-y-11">
 							  <h1>租赁不可抢</h1>
 							</div>
-							<div class="text-2xl transform -translate-y-64 text-red-500 scale-150">
+							<div class="text-xl transform -translate-y-64 text-red-500 scale-32">
 							  <h1>渐进式表单</h1>
 							</div>
-							<div class="row-start-1 rotate-45 text-red-600 col-start-2 text-4xl col-span-2 transform translate-x-20 translate-y-4">
+							<div class="text-3xl row-start-1 rotate-45 text-red-600 col-start-2 col-span-2 transform translate-x-20 translate-y-4">
 							  <h1>XXX 问卷</h1>
 							</div>
 						  </div>
@@ -187,7 +188,6 @@
 					</div>
 				</section>
 				<section data-auto-animate data-background="http://i.giphy.com/90F8aUepslB84.gif">
-
 				</section>
 				<section data-auto-animate data-background-transition="zoom">
 					<div class="lg:text-center">
@@ -195,34 +195,498 @@
 						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">关键性技术</p>
 					</div>
 					<ol class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
-						<li class="flex">
+						<li class="flex fragment">
 							<svg class="h-11 w-11 flex-none overflow-visible" fill="none"><defs><filter id="step-icon-0" x="-3" y="-1" width="50" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2.5"></feGaussianBlur><feComposite in2="hardAlpha" operator="out"></feComposite><feColorMatrix values="0 0 0 0 0.054902 0 0 0 0 0.647059 0 0 0 0 0.913725 0 0 0 0.12 0"></feColorMatrix><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_804_95228"></feBlend><feBlend in="SourceGraphic" in2="effect1_dropShadow_804_95228" result="shape"></feBlend></filter></defs><g filter="url(#step-icon-0)"><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" fill="#EEF2FF"></path><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><path d="M11.75 8.75h12.5a3 3 0 0 1 3 3v20.5a3 3 0 0 1-3 3h-12.5a3 3 0 0 1-3-3v-20.5a3 3 0 0 1 3-3Z" fill="#fff" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path opacity=".4" d="M29.75 35.25h2.5a3 3 0 0 0 3-3v-20.5a3 3 0 0 0-3-3h-20.5a3 3 0 0 0-3 3v7.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M30.25 19.75v4.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 							<div class="ml-6">
-								<h2 class="flex items-center text-sm font-semibold leading-6">
-									<span class="hidden xl:inline text-indigo-500">JSON Schema</span></span>
-								</h2>
-								<p class="mt-2 text-sm leading-7 text-slate-600">通过定义 Schema 可以实现强大验证功能，选择使用这项技术也是主要是受 JetBrains IED 中配置文件的自动补全和验证功能启发。</p>
+								<p class="flex items-center text-sm font-semibold leading-6">
+									<span class="text-indigo-500">JSON Schema</span></span>
+								</p>
+								<p class="mt-2 text-sm text-left leading-7 text-slate-600">通过定义 Schema 可以实现强大验证功能，选择使用这项技术也是主要是受 JetBrains IED 中配置文件的自动补全和验证功能启发。</p>
 							</div>
 						</li>
-						<li class="flex">
+						<li class="flex fragment">
 							<svg class="h-11 w-11 flex-none overflow-visible" fill="none"><defs><filter id="step-icon-1" x="-3" y="-1" width="50" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2.5"></feGaussianBlur><feComposite in2="hardAlpha" operator="out"></feComposite><feColorMatrix values="0 0 0 0 0.054902 0 0 0 0 0.647059 0 0 0 0 0.913725 0 0 0 0.12 0"></feColorMatrix><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_804_95228"></feBlend><feBlend in="SourceGraphic" in2="effect1_dropShadow_804_95228" result="shape"></feBlend></filter></defs><g filter="url(#step-icon-1)"><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" fill="#EEF2FF"></path><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><path opacity=".4" d="M28.75 35.25h3.5a3 3 0 0 0 3-3v-20.5a3 3 0 0 0-3-3h-20.5a3 3 0 0 0-3 3v7.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.75 24.75a2 2 0 0 1 2-2h12.5a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-11.5a3 3 0 0 1-3-3v-7.5Z" fill="#fff"></path><path d="M10.75 23.5h12.5V22h-12.5v1.5Zm13.75 1.25v8.5H26v-8.5h-1.5Zm-1.25 9.75h-11.5V36h11.5v-1.5ZM9.5 32.25v-7.5H8v7.5h1.5Zm2.25 2.25a2.25 2.25 0 0 1-2.25-2.25H8A3.75 3.75 0 0 0 11.75 36v-1.5Zm12.75-1.25c0 .69-.56 1.25-1.25 1.25V36A2.75 2.75 0 0 0 26 33.25h-1.5Zm-1.25-9.75c.69 0 1.25.56 1.25 1.25H26A2.75 2.75 0 0 0 23.25 22v1.5ZM10.75 22A2.75 2.75 0 0 0 8 24.75h1.5c0-.69.56-1.25 1.25-1.25V22Z" fill="#6366F1"></path><path d="M15.25 26.75 12.75 29l2.5 2.25M18.75 26.75l2.5 2.25-2.5 2.25" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path opacity=".4" d="M12.75 14.25h18.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 							<div class="ml-6">
-								<h2 class="flex items-center text-sm font-semibold leading-6">
-									<span class="ml-2 text-indigo-500">Workflow DSL</span>
-								</h2>
-								<p class="mt-2 text-sm leading-7 text-slate-600">通过 YAML 或 JSON 等数据可以实现 Workflow 的定义，并将定义的 Workflow 反序列化为其他变成语言能够执行的逻辑。</p>
+								<p class="flex items-center text-sm font-semibold leading-6">
+									<span class="text-indigo-500">Workflow DSL</span>
+								</p>
+								<p class="mt-2 text-sm text-left leading-7 text-slate-600">通过 YAML 或 JSON 等数据可以实现 Workflow 的定义，并将定义的 Workflow 反序列化为其他变成语言能够执行的逻辑。</p>
 							</div>
 						</li>
-						<li class="flex">
+						<li class="flex fragment">
 							<svg class="h-11 w-11 flex-none overflow-visible" fill="none"><defs><filter id="step-icon-2" x="-3" y="-1" width="50" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2.5"></feGaussianBlur><feComposite in2="hardAlpha" operator="out"></feComposite><feColorMatrix values="0 0 0 0 0.054902 0 0 0 0 0.647059 0 0 0 0 0.913725 0 0 0 0.12 0"></feColorMatrix><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_804_95228"></feBlend><feBlend in="SourceGraphic" in2="effect1_dropShadow_804_95228" result="shape"></feBlend></filter></defs><g filter="url(#step-icon-2)"><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" fill="#EEF2FF"></path><path d="M2.75 10A7.25 7.25 0 0 1 10 2.75h24A7.25 7.25 0 0 1 41.25 10v24A7.25 7.25 0 0 1 34 41.25H10A7.25 7.25 0 0 1 2.75 34V10Z" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><path fill-rule="evenodd" clip-rule="evenodd" d="M23 35.25c.69 0 1.25-.56 1.25-1.25A3.75 3.75 0 0 1 28 30.25a1.25 1.25 0 1 0 0-2.5A3.75 3.75 0 0 1 24.25 24a1.25 1.25 0 1 0-2.5 0A3.75 3.75 0 0 1 18 27.75a1.25 1.25 0 0 0 0 2.5A3.75 3.75 0 0 1 21.75 34c0 .69.56 1.25 1.25 1.25Z" fill="#fff"></path><path d="M28 27a.75.75 0 0 0 0 1.5V27Zm-4.5 7a.5.5 0 0 1-.5.5V36a2 2 0 0 0 2-2h-1.5Zm5-5a.5.5 0 0 1-.5.5V31a2 2 0 0 0 2-2h-1.5Zm-.5-.5a.5.5 0 0 1 .5.5H30a2 2 0 0 0-2-2v1.5Zm-5-5a.5.5 0 0 1 .5.5H25a2 2 0 0 0-2-2v1.5Zm-.5.5a.5.5 0 0 1 .5-.5V22a2 2 0 0 0-2 2h1.5Zm-5 5a.5.5 0 0 1 .5-.5V27a2 2 0 0 0-2 2h1.5Zm.5.5a.5.5 0 0 1-.5-.5H16a2 2 0 0 0 2 2v-1.5Zm5 5a.5.5 0 0 1-.5-.5H21a2 2 0 0 0 2 2v-1.5ZM18 31a3 3 0 0 1 3 3h1.5a4.5 4.5 0 0 0-4.5-4.5V31Zm3-7a3 3 0 0 1-3 3v1.5a4.5 4.5 0 0 0 4.5-4.5H21Zm7 3a3 3 0 0 1-3-3h-1.5a4.5 4.5 0 0 0 4.5 4.5V27Zm-3 7a3 3 0 0 1 3-3v-1.5a4.5 4.5 0 0 0-4.5 4.5H25Z" fill="#6366F1"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M13 27.25c.69 0 1.25-.56 1.25-1.25 0-.966.784-1.75 1.75-1.75a1.25 1.25 0 1 0 0-2.5A1.75 1.75 0 0 1 14.25 20a1.25 1.25 0 1 0-2.5 0A1.75 1.75 0 0 1 10 21.75a1.25 1.25 0 0 0 0 2.5c.966 0 1.75.784 1.75 1.75 0 .69.56 1.25 1.25 1.25Z" fill="#fff"></path><path d="M16 21a.75.75 0 0 0 0 1.5V21Zm-2.5 5a.5.5 0 0 1-.5.5V28a2 2 0 0 0 2-2h-1.5Zm3-3a.5.5 0 0 1-.5.5V25a2 2 0 0 0 2-2h-1.5Zm-.5-.5a.5.5 0 0 1 .5.5H18a2 2 0 0 0-2-2v1.5Zm-3-3a.5.5 0 0 1 .5.5H15a2 2 0 0 0-2-2v1.5Zm-.5.5a.5.5 0 0 1 .5-.5V18a2 2 0 0 0-2 2h1.5Zm-3 3a.5.5 0 0 1 .5-.5V21a2 2 0 0 0-2 2h1.5Zm.5.5a.5.5 0 0 1-.5-.5H8a2 2 0 0 0 2 2v-1.5Zm3 3a.5.5 0 0 1-.5-.5H11a2 2 0 0 0 2 2v-1.5ZM10 25a1 1 0 0 1 1 1h1.5a2.5 2.5 0 0 0-2.5-2.5V25Zm1-5a1 1 0 0 1-1 1v1.5a2.5 2.5 0 0 0 2.5-2.5H11Zm5 1a1 1 0 0 1-1-1h-1.5a2.5 2.5 0 0 0 2.5 2.5V21Zm-1 5a1 1 0 0 1 1-1v-1.5a2.5 2.5 0 0 0-2.5 2.5H15Z" fill="#6366F1"></path><path opacity=".4" d="M29.75 35.25h2.5a3 3 0 0 0 3-3v-20.5a3 3 0 0 0-3-3h-20.5a3 3 0 0 0-3 3v5.5M12.75 14.25h18.5" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 								<div class="ml-6">
-								<h2 class="flex items-center text-sm font-semibold leading-6">
-									<span class="ml-2 text-indigo-500">Activity</span>
-								</h2>
-								<p class="mt-2 text-sm leading-7 text-slate-600">是 Workflow 的重要组成部分，也可以看做是一个可恢复的状态机，通过将事务拆分到单个 Activity 中，就可以实现业务的强一致性。</p>
+								<p class="flex items-center text-sm font-semibold leading-6">
+									<span class="text-indigo-500">Activity</span>
+								</p>
+								<p class="mt-2 text-sm text-left leading-7 text-slate-600">是 Workflow 的重要组成部分，也可以看做是一个可恢复的状态机，通过将事务拆分到单个 Activity 中，就可以实现业务的强一致性。</p>
 							</div>
 						</li>
 					</ol>
+				</section>
+				<section data-auto-animate>
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Architecture</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">技术架构</p>
+					</div>
+					<div class="justify-center">
+						<img src="assets/architecture.png" alt="UDFS Architecture">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">JSON Schema</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">JSON Schema 规范</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-json" data-trim data-line-numbers>
+						{
+							"$schema": "https://json-schema.org/draft/2019-09/schema",
+							"type": "object",
+							"title": "Root Schema",
+							"$defs": {},
+							"default": {},
+							"required": ["id","name"],
+							"properties": {},
+							"additionalProperties": true
+						}
+					</code></pre>
+					<p>由 Apifox 翻译的<a href="https://json-schema.apifox.cn/">JSON Schema 规范</a>。</p>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Schema Go Struct</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Go Schema 结构定义</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-go" data-trim data-line-numbers>
+						type Schema struct {
+							Id          *primitive.ObjectID `bson:"_id,omitempty" json:"$id,omitempty"`
+							Type        string              `bson:"type" json:"type"`
+							Title       *string             `bson:"title,omitempty" json:"title,omitempty"`
+							Schema      *string             `bson:"schema,omitempty" json:"$schema,omitempty"`
+							Description *string             `bson:"description,omitempty" json:"description,omitempty"`
+							Properties  map[string]*Schema  `bson:"properties,omitempty" json:"properties,omitempty"`
+						
+							// validation: string
+							MinLength *int           `bson:"minLength,omitempty" json:"minLength,omitempty"`
+							MaxLength *int           `bson:"maxLength,omitempty" json:"maxLength,omitempty"`
+							Pattern   *regexp.Regexp `bson:"pattern,omitempty" json:"pattern,omitempty"`
+							Format    *string        `bson:"format,omitempty" json:"format,omitempty"`
+						
+							// validation: object
+							MinProperties        *int                   `bson:"minProperties,omitempty" json:"minProperties,omitempty"`
+							MaxProperties        *int                   `bson:"maxProperties,omitempty" json:"maxProperties,omitempty"`
+							Required             []string               `bson:"required,omitempty" json:"required,omitempty"`
+							ReadOnly             []string               `bson:"readOnly,omitempty" json:"readOnly,omitempty"`
+							Dependencies         map[string]interface{} `bson:"dependencies,omitempty" json:"dependencies,omitempty"`
+							AdditionalProperties interface{}            `bson:"additionalProperties,omitempty" json:"additionalProperties,omitempty"`
+							PatternProperties    map[string]*Schema     `bson:"patternProperties,omitempty" json:"patternProperties,omitempty"`
+							PropertyNames        *Schema                `bson:"propertyNames,omitempty" json:"propertyNames,omitempty"`
+							MinItems             *int                   `bson:"minItems,omitempty" json:"minItems,omitempty"`
+							MaxItems             *int                   `bson:"maxItems,omitempty" json:"maxItems,omitempty"`
+							UniqueItems          bool                   `bson:"uniqueItems,omitempty" json:"uniqueItems,omitempty"`
+							Contains             *Schema                `bson:"contains,omitempty" json:"contains,omitempty"`
+						
+							// validation: number / integer
+							MultipleOf       *big.Rat    `bson:"multipleOf,omitempty" json:"multipleOf,omitempty"`
+							Maximum          *big.Rat    `bson:"maximum,omitempty" json:"maximum,omitempty"`
+							ExclusiveMaximum *big.Rat    `bson:"exclusiveMaximum,omitempty" json:"exclusiveMaximum,omitempty"`
+							Minimum          *big.Rat    `bson:"minimum,omitempty" json:"minimum,omitempty"`
+							ExclusiveMinimum *big.Rat    `bson:"exclusiveMinimum,omitempty" json:"exclusiveMinimum,omitempty"`
+							AdditionalItems  interface{} `bson:"additionalItems,omitempty" json:"additionalItems,omitempty"`
+						
+							// validation: all
+							Enum []interface{} `bson:"enum,omitempty" json:"enum,omitempty"`
+						
+							// validation: schema
+							OneOf []*Schema `bson:"oneOf,omitempty" json:"oneOf,omitempty"`
+							AnyOf []*Schema `bson:"anyOf,omitempty" json:"anyOf,omitempty"`
+							AllOf []*Schema `bson:"allOf,omitempty" json:"allOf,omitempty"`
+							Not   *Schema   `bson:"not,omitempty" json:"not,omitempty"`
+							If    *Schema   `bson:"if,omitempty" json:"if,omitempty"`
+							Then  *Schema   `bson:"then,omitempty" json:"then,omitempty"`
+							Else  *Schema   `bson:"else,omitempty" json:"else,omitempty"`
+						
+							// Meta data
+							CreatedAt *time.Time `bson:"created_at,omitempty" json:"created_at,omitempty"`
+							UpdatedAt *time.Time `bson:"updated_at,omitempty" json:"updated_at,omitempty"`
+						
+							// Relation
+							Operator *Operator `bson:"-" json:"operator,omitempty"`
+							Workflow *Workflow `bson:"-" json:"stages,omitempty"`
+						}
+					</code></pre>
+					<p>具体定义文件在<a href="https://gitlab.shenjumiaosuan.com/services/modules/inquiry/-/blob/08cda0e095e47de03a0055589bdaeb739321ec0b/dao/schema.go">schema.go</a>文件中。</p>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Workflow Struct</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">工作流程结构</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-go" data-trim data-line-numbers>
+						type (
+							// Sequence consist of a collection of Statements that runs in sequential.
+							Sequence struct {
+								Elements []*Statement `bson:"elements" json:"elements"`
+							}
+
+							// Parallel can be a collection of Statements that runs in parallel.
+							Parallel struct {
+								Branches []*Statement `bson:"branches" json:"branches"`
+							}
+
+							// Condition an executable branch.
+							Condition struct {
+								Name        string            `bson:"name" json:"name"`
+								Statement   Statement         `bson:"statement" json:"statement"`
+								References  map[string]string `bson:"references" json:"references"`
+								Expression  string            `bson:"expression" json:"expression"`
+								Description string            `bson:"description" json:"description"`
+							}
+
+							// Conditions can be a collection of logical branches.
+							Conditions struct {
+								Branches []*Condition `bson:"branches" json:"branches"`
+							}
+
+							// Statement is the building block of dsl workflow. A Statement can be a simple Activity or could be a Sequence or Parallel.
+							Statement struct {
+								Delay      uint64      `bson:"delay" json:"delay"`
+								Activity   *Activity   `bson:"activity" json:"activity"`
+								Sequence   *Sequence   `bson:"sequence" json:"sequence"`
+								Parallel   *Parallel   `bson:"parallel" json:"parallel"`
+								Conditions *Conditions `bson:"conditions" json:"conditions"`
+							}
+
+							// Workflow is the type used to express the workflow definition. Payload can be used as input to Activity.
+							Workflow struct {
+								Id        primitive.ObjectID `bson:"_id" json:"id"`
+								Root      Statement          `bson:"root" json:"root"`
+								SchemaID  primitive.ObjectID `bson:"schemaID" json:"schemaID"`
+								CreatedAt *time.Time         `bson:"createdAt,omitempty" json:"createdAt,omitempty"`
+								UpdatedAt *time.Time         `bson:"updatedAt,omitempty" json:"updatedAt,omitempty"`
+							}
+
+							Executable interface {
+								execute(ctx workflow.Context, record Record) error
+							}
+						)
+					</code></pre>
+					<p>Workflow 调度引擎采用的是<a href="https://temporal.io/">Temproal</a>, 具体定义文件在<a href="https://gitlab.shenjumiaosuan.com/services/modules/inquiry/-/blob/08cda0e095e47de03a0055589bdaeb739321ec0b/dao/workflow.go">workflow.go</a>文件中。</p>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Customize workflow via DSL</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">通过 DSL 自定义工作流流程</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-json" data-trim data-line-numbers>
+						{
+							"_id": ObjectId("6360db82f8290e6061a11f83"),
+							"root": {
+								"activity": null,
+								"sequence": {
+									"elements": [
+										{
+											"activity": {
+												"name": "ValidateCaptcha",
+												"version": "",
+												"arguments": [
+													{
+														"name": "code",
+														"type": "string",
+														"reference": "code",
+														"description": ""
+													},
+													{
+														"name": "mobile",
+														"type": "string",
+														"reference": "mobile",
+														"description": ""
+													},
+													{
+														"name": "captcha",
+														"type": "string",
+														"reference": "captcha",
+														"description": ""
+													}
+												]
+											},
+											"sequence": null,
+											"parallel": null
+										},
+										{
+											"activity": {
+												"name": "StoreInquiry",
+												"version": "",
+												"arguments": [
+													{
+														"name": "inquiry",
+														"type": "object",
+														"reference": "",
+														"description": ""
+													}
+												]
+											},
+											"sequence": null,
+											"parallel": null
+										},
+										{
+											"activity": {
+												"name": "SendingWecomNotificationInternal",
+												"version": "",
+												"arguments": [
+													{
+														"name": "name",
+														"type": "string",
+														"reference": "name",
+														"description": "Customer name"
+													},
+													{
+														"name": "mobile",
+														"type": "string",
+														"reference": "mobile",
+														"description": "Customer mobile number"
+													}
+												]
+											},
+											"sequence": null,
+											"parallel": null
+										}
+									]
+								},
+								"parallel": null
+							},
+							"schemaID": ObjectId("62d7b184d7a6925d36886719")
+						}
+					</code></pre>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Customize workflow via DSL</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">通过 DSL 自定义工作流流程</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-json" data-trim data-line-numbers>
+						{
+							"_id": ObjectId("6360db82f8290e6061a11f83"),
+							"root": {
+								"activity": null,
+								"sequence": null,
+								"parallel": null,
+								"conditions": [
+									{
+										"name": "ConditionalBranch",
+										"statement": {
+											"activity": {
+												"name": "ValidateCaptcha",
+												"version": "",
+												"arguments": [
+													{
+														"name": "code",
+														"type": "string",
+														"reference": "code",
+														"description": ""
+													},
+													{
+														"name": "mobile",
+														"type": "string",
+														"reference": "mobile",
+														"description": ""
+													},
+													{
+														"name": "captcha",
+														"type": "string",
+														"reference": "captcha",
+														"description": ""
+													}
+												]
+											}
+										},
+										"references": {
+											"name": "name",
+											"mobile": "mobile"
+										},
+										"expression": "name == \"George\" && mobile == \"18616882860\"",
+										"description": "判断是否满足条件"
+									}
+								]
+							},
+							"schemaID": ObjectId("62d7b184d7a6925d36886719")
+						}
+					</code></pre>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Activities</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">定义工作流每个节点的执行逻辑</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-go" data-trim data-line-numbers>
+						func (a *Activities) ValidateCaptcha(ctx context.Context, code, mobile, captcha string) error {
+							if code != "" && mobile != "" && captcha == "0000" {
+								return nil
+							}
+						
+							return temporal.NewNonRetryableApplicationError("invalid captcha", "normal", nil)
+						}
+						
+						func (a *Activities) ValidateBlocking(ctx context.Context, ip, mobile string) (*dao.Trait, error) {
+							var limited *dao.Limited
+							err := mongodb.Database.Collection("limited").FindOne(context.TODO(), bson.D{
+								{"traits",
+									bson.D{
+										{"$elemMatch",
+											bson.D{
+												{"value", bson.D{{"$in", bson.A{ip, mobile}}}},
+											},
+										},
+									},
+								},
+							}).Decode(&limited)
+							if err != nil {
+								msg := fmt.Sprintf("Activity is %s, error detail: %s", activity.GetInfo(ctx).ActivityType.Name, err)
+								activity.GetLogger(ctx).Error(msg)
+								return nil, err
+							}
+						
+							var trait = dao.Trait{
+								Name:  "limited",
+								Value: false,
+							}
+						
+							if limited != nil {
+								trait.Value = true
+							}
+						
+							return &trait, nil
+						}
+						
+						func (a *Activities) ImproveCustomer(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) ImproveAgent(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) ImproveEstate(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) ImproveCustomerSource(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) StoreInquiry(ctx context.Context, record dao.Record) error {
+							_, err := mongodb.Database.Collection("record").InsertOne(ctx, record)
+							if err != nil {
+								return err
+							}
+						
+							return nil
+						}
+						
+						func (a *Activities) SendingSMSNotificationToCustomer(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) SendingMailNotificationToPartner(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) SendingWecomNotificationInternal(ctx context.Context, name, mobile string) error {
+							payload := fmt.Sprintf(`{"msgtype":"news","news":{"articles":[{"url":"https://www.sjmsdev.cn/jp/maifang/all","title":"Test UDFS","picurl":"https://neox.sjmsdev.cn/6VtHKZnP1IEJpCkr23EXsh0cogpQl0jXoxtgkTHw.jpg","description":"用户: %s\n电话：%s"}]}}`, name, mobile)
+						
+							resp, err := http.Post("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=ad25ff3e-fc96-447f-b08a-40a75eadcfe3", "application/json", strings.NewReader(payload))
+							if err != nil {
+								return err
+							}
+						
+							resBytes, err := io.ReadAll(resp.Body)
+							if err != nil {
+								return err
+							}
+						
+							journal.Logger.Info("send notification:", zap.String("response", string(resBytes)))
+							return nil
+						}
+						
+						func (a *Activities) CreateCustomerClue(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) SendingClueNotificationToPartner(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) CreateOrUpdateCustomerIntoInternal(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) CreateOrUpdateCustomerIntoPartner(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+						
+						func (a *Activities) CreateOrUpdateBilling(ctx context.Context, record dao.Record) error {
+							return nil
+						}
+					</code></pre>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Register Workflow and Activities</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">注册工作流和可用的流程节点</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-go" data-trim data-line-numbers>
+						c, err := client.Dial(client.Options{
+							HostPort: client.DefaultHostPort,
+						})
+						if err != nil {
+							journal.Logger.Sugar().Error(err)
+						}
+					</code></pre>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Register Workflow and Activities</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">注册工作流和可用的流程节点</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-go" data-trim data-line-numbers>
+						c, err := client.Dial(client.Options{
+							HostPort: client.DefaultHostPort,
+						})
+						if err != nil {
+							journal.Logger.Sugar().Error(err)
+						}
+				
+						defer c.Close()
+				
+						w := worker.New(c, "udfs", worker.Options{})
+						w.RegisterWorkflow(dao.InquiryWorkflow)
+						w.RegisterActivity(&activities.Activities{})
+					</code></pre>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-indigo-500">Register Workflow and Activities</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">注册工作流和可用的流程节点</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-go" data-trim data-line-numbers>
+						c, err := client.Dial(client.Options{
+							HostPort: client.DefaultHostPort,
+						})
+						if err != nil {
+							journal.Logger.Sugar().Error(err)
+						}
+				
+						defer c.Close()
+				
+						w := worker.New(c, "udfs", worker.Options{})
+						w.RegisterWorkflow(dao.InquiryWorkflow)
+						w.RegisterActivity(&activities.Activities{})
+
+						err = w.Run(worker.InterruptCh())
+						if err != nil {
+							journal.Logger.Sugar().Error("Unable to start worker", err)
+						}
+					</code></pre>
 				</section>
 				<section data-auto-animate data-background-transition="zoom">
 					<div class="lg:text-center">
@@ -243,6 +707,10 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				controls: false,
+				overview: true,
+				fragments: true,
+				showSlideNumber: 'all',
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
