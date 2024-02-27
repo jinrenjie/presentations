@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Docker</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../plugin/highlight/monokai.css">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+			  theme: {
+				extend: {
+				  colors: {
+                    docker: '#319DEF',
+				  }
+				}
+			  }
+			}
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate data-background-image="assets/cover-background.jpg">
+					<div class="text-left">
+						<h1 class="text-8xl text-docker">Docker</h1>
+						<h4 class="mt-8 text-4xl text-slate-400">基于容器化敏捷开发实践</h3>
+					</div>
+        </section>
+				<section data-auto-animate>
+					<div class="bg-white py-12">
+						<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+						  <div class="lg:text-center">
+							<h2 class="text-6xl font-semibold text-docker">为什么需要容器</h2>
+							<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">在使用容器技术之前，我们可能会遇到的问题</p>
+						  </div>
+					  
+						  <div class="mt-24">
+							<dl class="text-left space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-docker text-white">
+									<!-- Heroicon name: outline/globe-alt -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+                    </svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">水平伸缩能力</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">VM 方式部署的服务，难以对服务进行水平伸缩。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-docker text-white">
+									<!-- Heroicon name: outline/scale -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                  </svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">单一运行环境</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">同一台服务器上运行多个服务，难以做到隔离。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-docker text-white">
+									<!-- Heroicon name: outline/bolt -->
+									<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox="0 0 24 24"><title>calendar_2_line</title><g id="calendar_2_line" fill='none' fill-rule='evenodd'><path d='M24 0v24H0V0zM12.594 23.258l-.012.002-.071.035-.02.004-.014-.004-.071-.036c-.01-.003-.019 0-.024.006l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113-.014.002-.184.093-.01.01-.003.011.018.43.005.012.008.008.201.092c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.003-.011.018-.43-.003-.012-.01-.01z'/><path fill='#FFFFFFFF' d='M16 3a1 1 0 0 1 1 1v1h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2V4a1 1 0 0 1 2 0v1h6V4a1 1 0 0 1 1-1M8 7H5v2h14V7h-3zm-3 4v8h14v-8zm2 2a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3-2a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H12a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3-2a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H16a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2z'/></g></svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">服务生命周期</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">生命周期难以控制，难以实现灰度发布和滚动升级。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-docker text-white">
+									<!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
+									<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+									</svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">环境的一致性</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">开发人员难以通过代码的方式保证多环境的一致性。</dd>
+							  </div>
+							</dl>
+						  </div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div class="bg-white py-12">
+						<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+						  <div class="lg:text-center">
+							  <h2 class="text-6xl font-semibold text-docker">提供的能力</h2>
+							  <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">容器化技术为我们带来了更多云原生能力</p>
+						  </div>
+					  
+						  <div class="mt-24">
+							<dl class="text-left space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-docker text-white">
+									  <!-- Heroicon name: outline/globe-alt -->
+                    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' viewBox="0 0 24 24"><title>combine_line</title><g id="combine_line" fill='none' fill-rule='evenodd'><path d='M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5935,23.2578 L12.5819,23.2595 L12.5109,23.295 L12.4919,23.2987 L12.4767,23.295 L12.4057,23.2595 C12.3958,23.2564 12.387,23.259 12.3821,23.2649 L12.378,23.2758 L12.3609,23.7031 L12.3659,23.7235 L12.3769,23.7357 L12.4805,23.8097 L12.4953,23.8136 L12.5071,23.8097 L12.6107,23.7357 L12.6233,23.7197 L12.6267,23.7031 L12.6096,23.2758 C12.6076,23.2657 12.601,23.2593 12.5935,23.2578 Z M12.8584,23.1453 L12.8445,23.1473 L12.6598,23.2397 L12.6499,23.2499 L12.6472,23.2611 L12.6651,23.6906 L12.6699,23.7034 L12.6784,23.7105 L12.8793,23.8032 C12.8914,23.8069 12.9022,23.803 12.9078,23.7952 L12.9118,23.7812 L12.8777,23.1665 C12.8753,23.1546 12.8674,23.147 12.8584,23.1453 Z M12.143,23.1473 C12.1332,23.1424 12.1222,23.1453 12.1156,23.1526 L12.1099,23.1665 L12.0758,23.7812 C12.0751,23.7927 12.0828,23.8019 12.0926,23.8046 L12.1083,23.8032 L12.3092,23.7105 L12.3186,23.7024 L12.3225,23.6906 L12.3404,23.2611 L12.3372,23.2485 L12.3278,23.2397 L12.143,23.1473 Z'/><path fill='#FFFFFFFF' d='M3,5 C3,3.89543 3.89543,3 5,3 L14,3 C15.1046,3 16,3.89543 16,5 L16,8 L19,8 C20.1046,8 21,8.89543 21,10 L21,19 C21,20.1046 20.1046,21 19,21 L10,21 C8.89543,21 8,20.1046 8,19 L8,16 L5,16 C3.89543,16 3,15.1046 3,14 L3,5 Z M10,16 L10,19 L19,19 L19,10 L16,10 L16,14 C16,15.1046 15.1046,16 14,16 L10,16 Z M14,10 L14,14 L10,14 L10,10 L14,10 Z M14,8 L10,8 C8.89543,8 8,8.89543 8,10 L8,14 L5,14 L5,5 L14,5 L14,8 Z'/></g></svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">服务编排</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">通过服务编排能力，可以实现简单的 Infrastructure as code。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-docker text-white">
+									  <!-- Heroicon name: outline/scale -->
+                    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox="0 0 24 24"><title>chart_bar_2_line</title><g id="chart_bar_2_line" fill='none' fill-rule='evenodd'><path d='M24 0v24H0V0zM12.594 23.258l-.012.002-.071.035-.02.004-.014-.004-.071-.036c-.01-.003-.019 0-.024.006l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113-.014.002-.184.093-.01.01-.003.011.018.43.005.012.008.008.201.092c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.003-.011.018-.43-.003-.012-.01-.01z'/><path fill='#FFFFFFFF' d='M20 3a2 2 0 0 1 1.995 1.85L22 5v14a2 2 0 0 1-1.85 1.995L20 21H4a2 2 0 0 1-1.995-1.85L2 19v-5a2 2 0 0 1 1.85-1.995L4 12h4v-2a2 2 0 0 1 1.85-1.995L10 8h4V5a2 2 0 0 1 1.85-1.995L16 3zm0 2h-4v14h4zm-6 5h-4v9h4zm-6 4H4v5h4z'/></g></svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">渐进式扩展</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">从单机到 Swarm 或 Kubernetes，可以根据业务规模逐步升级，并且支持服务的注册、发现和健康检查。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-docker text-white">
+									  <!-- Heroicon name: outline/bolt -->
+									  <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox="0 0 24 24"><title>cloud_line</title><g id="cloud_line" fill='none' fill-rule='evenodd'><path d='M24 0v24H0V0h24ZM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01-.184-.092Z'/><path fill='#FFFFFFFF' d='M5 10.416a6.5 6.5 0 0 1 12.586-2.204A6.002 6.002 0 0 1 16 20H7a5 5 0 0 1-2-9.584ZM11.5 6a4.5 4.5 0 0 0-4.473 5 1.01 1.01 0 0 1-.758 1.09A3.002 3.002 0 0 0 7 18h9a4 4 0 0 0 .655-7.947 1.01 1.01 0 0 1-.81-.732A4.502 4.502 0 0 0 11.5 6Z'/></g></svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">云原生支持</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">基于容器编排和服务治理实现动态伸缩和动态负载，提高效率的同时降低成本。</dd>
+							  </div>
+					  
+							  <div class="relative fragment">
+								<dt>
+								  <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-docker text-white">
+									  <!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
+									  <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox="0 0 24 24"><title>dashboard_3_line</title><g id="dashboard_3_line" fill='none' fill-rule='evenodd'><path d='M24 0v24H0V0h24ZM12.594 23.258l-.012.002-.071.035-.02.004-.014-.004-.071-.036c-.01-.003-.019 0-.024.006l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113-.014.002-.184.093-.01.01-.003.011.018.43.005.012.008.008.201.092c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.003-.011.018-.43-.003-.012-.01-.01-.184-.092Z'/><path fill='#FFFFFFFF' d='M12 2a9.965 9.965 0 0 1 6.837 2.702l.234.227A9.973 9.973 0 0 1 22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2Zm1 2.062V5a1 1 0 1 1-2 0v-.938A7.96 7.96 0 0 0 7.094 5.68l.663.663a1 1 0 1 1-1.414 1.414l-.663-.663A7.96 7.96 0 0 0 4.062 11H5a1 1 0 1 1 0 2h-.938a8.001 8.001 0 0 0 15.876 0H19a1 1 0 1 1 0-2h.938a7.96 7.96 0 0 0-1.618-3.906l-3.612 3.613a3 3 0 1 1-1.414-1.414l3.612-3.613A7.96 7.96 0 0 0 13 4.062ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z'/></g></svg>
+								  </div>
+								  <p class="ml-16 text-lg font-medium leading-6 text-gray-900">可观测性</p>
+								</dt>
+								<dd class="mt-2 ml-16 text-base text-gray-500">提供多种可观测性技术生态支持，实现无侵入式接入观测能力。</dd>
+							  </div>
+							</dl>
+						  </div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate data-background="http://i.giphy.com/90F8aUepslB84.gif">
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-docker">开始部署</h2>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-bash" data-trim data-line-numbers="2|4|6-10|12|14|16">
+            # 根据自己实际环境，设置期望放置项目的目录，例如我这里将项目放在~/payssion
+            export PROJECT_PATH=~/payssion && mkdir -p $PROJECT_PATH
+            # 将 Docker 运行环境克隆到项目目录中
+            git clone git@bitbucket.org:payssion/docker.git $PROJECT_PATH/docker
+            # 将项目代码克隆到本地项目目录中
+            git clone git@github.com:payssion/payssion-api.git $PROJECT_PATH/api
+            git clone git@bitbucket.org:payssion/payssion-admin.git $PROJECT_PATH/admin
+            git clone git@bitbucket.org:payssion/payssion-pubservice.git $PROJECT_PATH/pubservice
+            git clone git@bitbucket.org:payssion/payssion-dashboard.git $PROJECT_PATH/dashboard-api
+            git clone git@bitbucket.org:payssion/payssion-public-tools.git $PROJECT_PATH/public-tools
+            # 定义 PHP 版本环境变量，并拷贝 PHP 相关配置文件
+            cd $PROJECT_PATH/docker && export PHP_VERSION=8.1
+            # 拷贝 PHP 相关配置文件
+            cp -R templates/php/$PHP_VERSION/etc/* services/fpm/etc/
+            # 复制开发环境的 PHP 配置文件
+            mv services/fpm/etc/php/php.ini-development services/fpm/etc/php/php.ini
+					</code></pre>
+				</section>
+        <section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-docker">环境变量</h2>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-bash" data-trim data-line-numbers="2|5-7|10|13|16|19-20|23-24|27|30">
+            # 拷贝 Docker Compose 环境变量，然后按需配置 `.env` 中的相关设置
+            cp $PROJECT_PATH/docker/.env.example $PROJECT_PATH/docker/.env
+
+            # Global
+            TZ=Asia/Shanghai
+            TLD=payssion.local
+            SUBNET=10.0.0.0/24
+
+            # PHP
+            PHP_IMAGE_TAG=8.1-fpm
+
+            # Node
+            #NODE_IMAGE_TAG=12.22.9
+
+            # Nginx
+            NGINX_IMAGE_TAG=latest
+
+            # MySQL
+            #MYSQL_IMAGE_TAG=8.0.35
+            #MYSQL_ROOT_PASSWORD=
+
+            # Minio
+            # MINIO_ROOT_USER=
+            # MINIO_ROOT_PASSWORD=
+
+            # Project path in host
+            PROJECT_PATH_IN_HOST=
+
+            # Project path in container
+            PROJECT_PATH_IN_CONTAINER=/var/www/html
+					</code></pre>
+				</section>
+        <section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-docker">目录结构</h2>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-bash" data-trim data-line-numbers="5-14|15|16|17|18|19-21|22-24">
+            $ tree -L 2
+            .
+            ├── .env
+            ├── .env.example
+            ├── compose # 单个服务编排配置文件
+            │   ├── fpm.yaml
+            │   ├── mailpit.yaml
+            │   ├── minio.yaml
+            │   ├── mysql.yaml
+            │   ├── networks.yaml
+            │   ├── nginx.yaml
+            │   ├── node.yaml
+            │   ├── redis.yaml
+            │   └── volumes.yaml
+            ├── docker-compose-local.yaml # 本地开发环境
+            ├── docker-compose-prod.yaml # 生产环境
+            ├── docker-compose-sit.yaml # SIT 环境
+            ├── docker-compose.yaml # 默认编排配置，不纳入 Git 版本控制，可以自定义
+            ├── services # 服务配置
+            │   ├── fpm
+            │   └── nginx
+            └── templates # 服务配置模板
+            │   ├── nginx
+            │   └── php
+            └── README.md
+					</code></pre>
+				</section>
+        <section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-docker">服务编排</h2>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-bash" data-trim data-line-numbers="2|5-7|10-15|16-21|30">
+              # 复制对应环境的 Docker compose 编排配置文件
+              cp docker-compose-local.yaml docker-compose.yaml
+
+              # docker-compose.yaml
+              include:
+                - path: compose/volumes.yaml
+                - path: compose/networks.yaml
+
+                services:
+                  fpm:
+                    labels:
+                    - dev.orbstack.domains=fpm.${TLD}
+                    extends:
+                    file: compose/fpm.yaml
+                    service: fpm
+                  nginx:
+                    labels:
+                    - dev.orbstack.domains=*.${TLD}
+                    extends:
+                    file: compose/nginx.yaml
+                    service: nginx
+                  redis:
+                    labels:
+                    - dev.orbstack.domains=redis.${TLD}
+                    extends:
+                    file: compose/redis.yaml
+                    service: redis
+
+              # 启动容器
+              docker compose up -d
+					</code></pre>
+          <p class="fragment fade-up">对于需要自定义服务内容的，可以使用 extends 方式引入，而无需自定义的服务，则直接在顶部 include 即可。</p>
+				</section>
+        <section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-docker">mDNS</h2>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">OrbStack 使用 mDNS 为容器设置域名解析，仅支持 .local TLD</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-bash" data-trim data-line-numbers>
+            # 查看域名解析
+            dns-sd -Q redis.payssion.local
+					</code></pre>
+				</section>
+        <section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-docker">HTTPS</h2>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">OrbStack 自动为容器开启 HTTPS（但目前尚不支持容器间 TLS 通信）</p>
+					</div>
+					<pre data-id="code-animation"><code class="hljs language-bash" data-trim data-line-numbers>
+            # 安装 mkcert
+            brew install mkcert
+            # 生成所需的证书
+            cd $PROJECT_PATH/docker
+            mkcert \
+              -cert-file services/nginx/certs/fullchain.cer \
+              -key-file services/nginx/certs/fullchain.key \
+              payssion.local "*.payssion.local"
+					</code></pre>
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            <a href="https://discord.com/channels/1106380155536035840/1106380156030959648/1204551564543660052">作者在后续版本中会考虑支持容器间的 HTTPS 通信</a>
+          </p>
+				</section>
+				<section data-auto-animate data-background-transition="zoom">
+					<div class="lg:text-center">
+						<h2 class="text-6xl font-semibold text-docker">Thank you!</h2>
+						<p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">I hope this is helpful, Happy hacking…</p>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				controls: false,
+				overview: true,
+				fragments: true,
+				showSlideNumber: 'all',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
